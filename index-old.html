@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dusun Web - Be a Muslim Developer. From Zero to Hero.</title>
+        <meta
+            name="description"
+            content="Dusun Web, part of Mata Rantai Academy, guides Muslim developers and provides reliable digital solutions for businesses."
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <style>
+            /* Custom Styles & Font Definitions */
+            body {
+                font-family: "Poppins", sans-serif;
+                background-color: #f8f8f8; /* Very light gray, similar to Gumroad */
+                color: #333;
+            }
+            .font-amiri {
+                font-family: "Amiri", serif;
+            }
+            h1,
+            h2,
+            h3 {
+                font-weight: 700;
+            }
+            .arab-text {
+                direction: rtl;
+                font-size: 1.75rem;
+                line-height: 2.5rem;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Simple Fade-in Animation on Scroll */
+            .fade-in-section {
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                    opacity 0.6s ease-out,
+                    transform 0.6s ease-out;
+            }
+            .fade-in-section.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Gumroad-like card styles */
+            .gumroad-card {
+                background-color: white;
+                border-radius: 8px;
+                box-shadow:
+                    0 1px 3px rgba(0, 0, 0, 0.05),
+                    0 10px 15px rgba(0, 0, 0, 0.05);
+                padding: 2.5rem;
+                transition: transform 0.2s ease;
+                cursor: pointer; /* Indicate clickable */
+            }
+            .gumroad-card:hover {
+                transform: translateY(-3px);
+                box-shadow:
+                    0 4px 6px rgba(0, 0, 0, 0.1),
+                    0 15px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Modal specific styles */
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                visibility: hidden;
+                transition:
+                    opacity 0.3s ease,
+                    visibility 0.3s ease;
+                z-index: 1000;
+            }
+            .modal.open {
+                opacity: 1;
+                visibility: visible;
+            }
+            .modal-content {
+                background-color: white;
+                padding: 2rem;
+                border-radius: 8px;
+                max-width: 90%;
+                max-height: 90%;
+                overflow-y: auto;
+                position: relative;
+                transform: scale(0.9);
+                transition: transform 0.3s ease;
+            }
+            .modal.open .modal-content {
+                transform: scale(1);
+            }
+
+            /* Carousel Styles for Testimonials */
+            .carousel-container {
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+            }
+            .carousel-item {
+                flex: 0 0 100%; /* Default to full width on small screens */
+                width: 100%;
+                scroll-snap-align: start;
+            }
+            @media (min-width: 768px) {
+                /* md breakpoint */
+                .carousel-item {
+                    flex: 0 0 calc(100% / 2); /* 2 items on medium screens */
+                    width: calc(100% / 2);
+                }
+            }
+            @media (min-width: 1024px) {
+                /* lg breakpoint */
+                .carousel-item {
+                    flex: 0 0 calc(100% / 3); /* 3 items on large screens */
+                    width: calc(100% / 3);
+                }
+            }
+
+            /* Hide scrollbar for aesthetic purposes */
+            .carousel-container::-webkit-scrollbar {
+                display: none;
+            }
+            .carousel-container {
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }
+
+            /* Company logos */
+            .company-logo {
+                height: 40px; /* Adjust as needed */
+                object-fit: contain;
+                filter: grayscale(100%);
+                transition: filter 0.3s ease;
+            }
+            .company-logo:hover {
+                filter: grayscale(0%);
+            }
+        </style>
+    </head>
+    <body class="bg-[#f8f8f8] text-[#333]">
+        <header
+            class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm"
+        >
+            <div
+                class="container mx-auto px-6 py-4 flex justify-between items-center"
+            >
+                <a href="#" class="flex items-center space-x-2">
+                    <img
+                        src="images/dusunweb_logo.jpg"
+                        alt="Dusun Web"
+                        class="h-10 w-10"
+                    />
+                    <img
+                        src="images/mata-rantai-logo.png"
+                        alt="Mata Rantai"
+                        class="h-10 w-10"
+                    />
+                    <div>
+                        <span class="text-xl font-bold text-gray-800"
+                            >Dusun Web</span
+                        >
+                        <span class="block text-xs font-light text-blue-600"
+                            >part of Mata Rantai Academy</span
+                        >
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                    <a href="#services" class="hover:text-blue-600 transition"
+                        >Services</a
+                    >
+                    <a href="#skills" class="hover:text-blue-600 transition"
+                        >Skills</a
+                    >
+                    <a
+                        href="#testimonials"
+                        class="hover:text-blue-600 transition"
+                        >Testimonials</a
+                    >
+                    <a href="#about" class="hover:text-blue-600 transition"
+                        >About Us</a
+                    >
+                </nav>
+                <a
+                    href="#contact"
+                    class="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition font-medium"
+                >
+                    Consultation
+                </a>
+            </div>
+        </header>
+
+        <main class="relative z-10">
+            <section class="py-20 md:py-32 bg-[#f8f8f8]">
+                <div class="container mx-auto px-6 text-center max-w-4xl">
+                    <h1
+                        class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight"
+                    >
+                        Be a Muslim Developer. From Zero to Hero.
+                    </h1>
+                    <p
+                        class="mt-6 max-w-3xl mx-auto text-xl text-gray-700 leading-relaxed"
+                    >
+                        We guide young generations to become skilled app
+                        developers and provide reliable digital solutions for
+                        businesses.
+                    </p>
+                    <div
+                        class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4"
+                    >
+                        <a
+                            href="#skills"
+                            class="bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition shadow-lg text-lg"
+                        >
+                            Start Learning Now
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20">
+                <div
+                    class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+                >
+                    <div
+                        class="fade-in-section gumroad-card flex flex-col justify-between"
+                    >
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                                Digital Solutions for Your Business
+                            </h2>
+                            <p
+                                class="text-gray-700 text-lg leading-relaxed mb-6"
+                            >
+                                Whether you need a professional website,
+                                reliable server monitoring, or want to automate
+                                your business processes, Dusun Web is your
+                                technology partner. We build from the ground up
+                                with deep expertise and a personal touch.
+                            </p>
+                        </div>
+                        <a
+                            href="#services"
+                            class="inline-flex items-center text-blue-600 hover:underline font-semibold mt-4"
+                        >
+                            View All Services
+                            <i
+                                data-feather="arrow-right"
+                                class="ml-2 h-5 w-5"
+                            ></i>
+                        </a>
+                    </div>
+
+                    <div
+                        class="fade-in-section gumroad-card flex flex-col justify-between"
+                    >
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                                Shaping a Generation of Pious Developers
+                            </h2>
+                            <p
+                                class="text-gray-700 text-lg leading-relaxed mb-6"
+                            >
+                                More than just coding, we are committed to
+                                guiding young generations, from junior high to
+                                senior high, who are accustomed to gadgets, to
+                                become skilled and character-driven Muslim app
+                                developers. Our goal is to cultivate expertise
+                                while fostering an understanding of life's true
+                                purpose.
+                            </p>
+                        </div>
+                        <a
+                            href="#philosophy"
+                            class="inline-flex items-center text-blue-600 hover:underline font-semibold mt-4"
+                        >
+                            Learn Our Philosophy
+                            <i
+                                data-feather="arrow-right"
+                                class="ml-2 h-5 w-5"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-section">
+                        <h2 class="text-4xl font-bold text-gray-900">
+                            Our Professional Services
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                            We offer a variety of technology solutions relevant
+                            to current industry needs.
+                        </p>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
+                        <div
+                            class="gumroad-card fade-in-section service-trigger"
+                            data-service-id="online-courses"
+                        >
+                            <div class="flex items-center space-x-4 mb-4">
+                                <i
+                                    data-feather="monitor"
+                                    class="h-8 w-8 text-blue-600"
+                                ></i>
+                                <h3 class="text-2xl font-bold text-gray-900">
+                                    Our Online Courses
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Join our online academy at
+                                <strong>dusunweb.sch.id</strong> to start your
+                                journey as a professional developer today.
+                            </p>
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section service-trigger"
+                            data-service-id="web-development"
+                        >
+                            <div class="flex items-center space-x-4 mb-4">
+                                <i
+                                    data-feather="code"
+                                    class="h-8 w-8 text-blue-600"
+                                ></i>
+                                <h3 class="text-2xl font-bold text-gray-900">
+                                    Web Development
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Building custom websites and web applications
+                                from simple landing pages to complex enterprise
+                                systems.
+                            </p>
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section service-trigger"
+                            data-service-id="server-monitoring"
+                            style="transition-delay: 100ms"
+                        >
+                            <div class="flex items-center space-x-4 mb-4">
+                                <i
+                                    data-feather="server"
+                                    class="h-8 w-8 text-blue-600"
+                                ></i>
+                                <h3 class="text-2xl font-bold text-gray-900">
+                                    Server Monitoring
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                24/7 monitoring services for your VPS and Cloud
+                                (GCP, AWS) ensuring maximum performance and
+                                uptime.
+                            </p>
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section service-trigger"
+                            data-service-id="ebook-creator"
+                            style="transition-delay: 200ms"
+                        >
+                            <div class="flex items-center space-x-4 mb-4">
+                                <i
+                                    data-feather="book-open"
+                                    class="h-8 w-8 text-blue-600"
+                                ></i>
+                                <h3 class="text-2xl font-bold text-gray-900">
+                                    Ebook Creator
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Convert your manuscripts into professional
+                                ebooks in PDF formats, ready for publishing and
+                                distribution.
+                            </p>
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section service-trigger"
+                            data-service-id="automation-engine"
+                            style="transition-delay: 300ms"
+                        >
+                            <div class="flex items-center space-x-4 mb-4">
+                                <i
+                                    data-feather="settings"
+                                    class="h-8 w-8 text-blue-600"
+                                ></i>
+                                <h3 class="text-2xl font-bold text-gray-900">
+                                    Automation Engine
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Automating various business processes such as
+                                content automation, marketing campaigns, and
+                                periodic reports.
+                            </p>
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section service-trigger"
+                            data-service-id="ai-agent"
+                            style="transition-delay: 400ms"
+                        >
+                            <div class="flex items-center space-x-4 mb-4">
+                                <i
+                                    data-feather="cpu"
+                                    class="h-8 w-8 text-blue-600"
+                                ></i>
+                                <h3 class="text-2xl font-bold text-gray-900">
+                                    AI Agent Automation
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Development of custom AI assistants to answer
+                                customer queries, analyze data, or optimize
+                                internal workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="philosophy" class="py-20 bg-white">
+                <div class="container mx-auto px-6 text-center max-w-4xl">
+                    <div class="fade-in-section">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                            Our Philosophy & Vision
+                        </h2>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                            Our vision is to guide young generations, "addicted"
+                            to gadgets, to become "armed" as skilled app
+                            developers, with a strong foundation of faith. We
+                            strive to eradicate digital "poison" by providing
+                            direction and purpose in life through technological
+                            expertise.
+                        </p>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-8 mb-6"
+                        >
+                            <p class="font-amiri arab-text text-gray-800">
+                                وَمَا خَلَقْتُ الْجِنَّ وَالْإِنْسَ إِلَّا
+                                لِيَعْبُدُونِ
+                            </p>
+                            <p class="italic text-gray-600">
+                                "And I did not create the jinn and mankind
+                                except to worship Me." (Qur'an, Adz Dzariyat:
+                                56)
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-8"
+                        >
+                            <p class="font-amiri arab-text text-gray-800">
+                                «يَسِّرُوا وَلاَ تُعَسِّرُوا، وَبَشِّرُوا وَلاَ
+                                تُنَفِّرُوا»
+                            </p>
+                            <p class="italic text-gray-600">
+                                "Make things easy, do not make them difficult,
+                                give good tidings, do not make them flee."
+                                (Hadith, Bukhari & Muslim)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-section">
+                        <h2 class="text-4xl font-bold text-gray-900">
+                            Our Skills & Curriculum
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                            Our curriculum aligns with current industry needs,
+                            supported by experienced mentorship.
+                        </p>
+                    </div>
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center"
+                    >
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Logic & Scratch
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Business Analysis
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            UI UX Design (Figma)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            HTML5, CSS3, jQuery
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Bootstrap & Tailwind
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Apache & Nginx
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Databases (SQL, NoSQL)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Backend (Laravel, Express.js)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Frontend (Nuxt.js, Next.js)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Mobile Dev (Flutter, React Native)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Containerization (Docker)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Version Control (Git)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Cloud & Hosting
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Architecture (Microservices)
+                        </div>
+                        <div
+                            class="gumroad-card fade-in-section p-4 text-base font-medium"
+                        >
+                            Project Mgmt (Scrum)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="testimonials" class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-section">
+                        <h2 class="text-4xl font-bold text-gray-900">
+                            What Our Clients Say
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                            Success stories from our students and clients who
+                            have benefited from Dusun Web.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <div class="flex carousel-container space-x-8 pb-4">
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Saya mengikuti kembali pelajaran "Buat
+                                    Aplikasi PPOB dengan 1 Bahasa" di Dusun Web
+                                    untuk memperdalam web programming dengan
+                                    belajar bahasa javascript untuk back end dan
+                                    front endnya (fullstack js). Selama 12
+                                    pertemuan ini, alhamdulillah saya bisa
+                                    mengerti dan bisa membuat aplikasi ppob
+                                    dengan framework javascript AdonisJS dengan
+                                    Vue JS. Semoga kedepannya saya dapat membuat
+                                    aplikasi e-commerce dengan menggunakan
+                                    framework javascript."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Pandi Apriyandi, IT Manager, Jakarta
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 100ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Bismillah, Terima Kasih Banyak untuk Mas
+                                    Elvis Sonata Yang telah memberikan ilmu
+                                    codingnya "Program Fullstack Javascript"
+                                    tanggal 19 Oktober 2019 Semoga bermanfaat
+                                    bagi kami untuk memasuki dunia industri 5.0.
+                                    Kesan yang kami dapatkan adalah Pertama
+                                    materi yang dibahas sangat bermanfaat sekali
+                                    dan dipakai di dunia industri saat ini dan
+                                    result dari pembelajaran sudah berbentuk
+                                    sebuah projek sehingga bisa kami gunakan
+                                    sebagai portofolio, Kedua Pemaparan Materi
+                                    sangat mudah kami pahami. Semoga Kedepannya
+                                    ada lagi materi materi yang berkaitan satu
+                                    sama lain sehingga memantabkan kami di dunia
+                                    persilatan "coding" ... Semoga Dusun Web
+                                    sukses dan banyak mencetak developer
+                                    developer tangguh dan bertanggung jawab."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Aria Nanda, Devops, Banten
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 200ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Kesan selama saya mengikuti kursus di Dusun
+                                    Web ini adalah pengajar yang sangat sabar
+                                    dalam menjelaskan semua materi secara
+                                    interaktif dan terstruktur. Dengan mengikuti
+                                    kursus Fullstack JavaScript di Dusun Web
+                                    pengalaman saya menjadi lebih banyak seputar
+                                    dunia IT, Makin banyak pengetahuan dan
+                                    istilah baru seputar dunia IT. Sebelumnya
+                                    saya belum tau apa itu Coding ?, Framework
+                                    ?, Logical JavaScript ? dll, Namun dengan
+                                    adanya kelas ini saya menjadi faham bahwa
+                                    ilmu IT itu harus disusun dengan struktuk
+                                    baik."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Destria, SMK, Bekasi
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 300ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Alhamdulillah, saya telah menyelesaikan
+                                    kursus koding di Dusun Web. Kesan selama
+                                    belajar disini: belajar programming di sini
+                                    sangat nyaman dengan pengajar yang sangat
+                                    berpengalaman dalam hal programming.
+                                    Pengajarannya pun di jelaskan secara rinci,
+                                    sehingga saya dapat mengingat pelajaran
+                                    logika dulu semasa kuliah. Pengajar juga
+                                    menceritakan pengalamannya selama ini kepada
+                                    kami, sehingga membuka pikiran saya lebih
+                                    luas lagi. Baik itu dalam hal pemrograman
+                                    maupun pengalaman dulu sewaktu beliau baru
+                                    memulai karir sebagai programmer. Ditambah
+                                    lagi ada pembelajaran agama yang beliau
+                                    bagikan di sela sela ceritanya. Intinya,
+                                    belajar disini sangat menyenangkan. Semoga
+                                    Dusun Web semakin maju. Aamiin.
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Arif Budiman, Padang
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Alhamdulillah bisa bergabung di dusun web.
+                                    Dimana saya bukan cuman belajar teknis, tapi
+                                    juga konsep yang membuat saya lebih faham
+                                    dengan teknologi yang selalu berubah. Hal
+                                    menarik yang bisa saya dapatkan di sini
+                                    adalah ilmu diniyah, yang membuat saya faham
+                                    bahwa ilmu dunia tidak akan berarti tanpa
+                                    diimbangi ilmu agama. Barakallahu fik."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Hermansyah, Devops, Kalimantan
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Bismillahirrahmanirrahim. Kesan selama saya
+                                    bergabung di dusun web sebagai pengajar ilmu
+                                    bahasa arab (sharaf dan nahwu)
+                                    alhamdulillah, dan juga sangat berterima
+                                    kasih kepada teman-teman yg banyak
+                                    memberikan nasehat demi nasehat kepada saya
+                                    pribadi sehingga saya bisa mengambil banyak
+                                    ibroh yang besar, bagaimana menjadi seorang
+                                    pemimpin, meskipun saya sebagai pengajar di
+                                    dusun web masih jauh dari yg di harapkan,
+                                    tapi saya tetap berusaha untuk menjadi lebih
+                                    baik, sehingga bisa memberi teladan yg baik
+                                    bagi teman-teman. Dan yg kedua, saya sangat
+                                    berterima kasih semenjak di dusun web saya
+                                    bisa belajar ilmu ruqyah. Dan banyak sekali
+                                    ilmu-ilmu yg saya dapatkan semenjak
+                                    bergabung di dusun web."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Miftahul Arifin, Mentor, Madura
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Kesan selama di dusunweb: Belajar
+                                    programming di dusun web nyaman banget.
+                                    Pengajarnya sangat berpengalaman dalam hal
+                                    programming. Cara mengajarnya pun sabar
+                                    banget dalam menjelaskan setiap materi yang
+                                    diajarkan secara rinci dan terstruktur.
+                                    Pengajar mengarahkan banyak hal tentang apa
+                                    saja yang dibutuhkan untuk belajar web
+                                    programming sekarang ini. Cara pengajarannya
+                                    pun unik, beda dari yang lain. Ruangannya
+                                    bersih dan rapi, sehingga membuat suasana
+                                    belajar menjadi nyaman. Dusun web cocok
+                                    banget bagi siapapun yang ingin belajar
+                                    mengenai web programming dengan latar
+                                    belakang IT maupun non-IT. Ditambah lagi
+                                    disini mendapatkan bonus ilmu agama yang
+                                    sangat berharga untuk kita amalkan dalam
+                                    kehidupan kita sehari-harinya."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Efriliawan Noor, Muamalat Karyawan,
+                                    Yogyakarta
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Kesan selama saya mengikuti kursus di
+                                    dusunweb ini adalah pengajar yang sangat
+                                    sabar dalam menjelaskan semua materi secara
+                                    detail dan terstruktur, sehingga mudah
+                                    dipahami oleh kami semua. Selain mendapatkan
+                                    ilmu yang diberikan selama kursus
+                                    programming, kami juga mendapatkan ilmu
+                                    agama yang sangat penting sekali dalam
+                                    kehidupan kita seperti belajar bahasa arab,
+                                    ruqyah, hafalan al qur’an dan hadits. Di
+                                    tempat kursus kami, juga mendapatkan
+                                    fasilitas lain berupa penginapan khusus
+                                    untuk program 1 tahun, makan siang dan snack
+                                    yang enak. Suasana ruangan sangat bersih,
+                                    rapi, dan nyaman sehingga membuat suasana
+                                    belajar lebih kondusif. Dusun Web merupakan
+                                    tempat kursus yang sangat recommended bagi
+                                    para mahasiswa, dan yang baru lulus SMA &
+                                    SMK dari yang jauh maupun dekat dari
+                                    jakarta, yang sudah mempunyai pekerjaan juga
+                                    sangat cocok, yang ingin memahami materi
+                                    pemrograman secara lebih detail."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Ragil Ramadhan, Frontend Developer,
+                                    Indramayu
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Selama belajar di Dusun Web, kami mendapat
+                                    banyak ilmu pemrograman tetapi bukan hanya
+                                    ilmu pemrograman saja, disana kami juga
+                                    mendapat pengobatan ruqyah yang membuat hati
+                                    menjadi tenang dan belajar menjadi lebih
+                                    fokus, terima kasih Dusun Web."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Rakhriyal Riyandi, SMK, Sukabumi
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Alhamdulillah setelah saya bergabung
+                                    bersama dusun web, saya menjadi mengetahui
+                                    banyak hal, bukan hanya skill dalam dunia IT
+                                    saja yang bertambah, tetapi ilmu keagamaan
+                                    saya juga bertambah, sebelumnya saat belajar
+                                    di sekolah, susah sekali pelajaran yang guru
+                                    berikan masuk ke dalam otak saya, tetapi
+                                    setelah saya masuk ke dusun web saya
+                                    diruqyah dan alhamdulillah hati saya menjadi
+                                    semakin tenang dan pelajaran pun mudah
+                                    diserap. Terima Kasih Dusun Web."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Ahmad Zaini, SMK, Sukabumi
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Selama mengikuti pembelajaran di Dusun Web,
+                                    pengajar nya sabar dalam mengajar.
+                                    Menjelaskan materi secara detail, selain
+                                    belajar ilmu komputer di Dusun Web juga kami
+                                    mendapatkan ilmu agama dan salah satunya
+                                    Ruqyah. Kami belajar bagaimana caranya
+                                    meruqyah orang, meruqyah diri sendiri
+                                    (Ruqyah Mandiri). Kurang lebihnya seperti
+                                    itu untuk lebih jelasnya silahkan bergabung
+                                    di DusunWeb."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Dimas Anugrah, SMK, Sukabumi
+                                </p>
+                            </div>
+                            <div
+                                class="carousel-item gumroad-card p-6 fade-in-section"
+                                style="transition-delay: 400ms"
+                            >
+                                <p
+                                    class="text-gray-700 italic leading-relaxed mb-4"
+                                >
+                                    "Alhamdulillah saya bisa bergabung sebagai
+                                    pelajar di Dusun Web, yang mana pengajar
+                                    disini sangat sabar dalam membimbing dan
+                                    menjelaskan semua materi kepada kami,
+                                    sehingga materi itu dapat dengan mudah
+                                    dipahami. Dalam proses belajar ilmu
+                                    pemrograman kita tidak langsung di tekan
+                                    untuk membuat project besar, tapi kita
+                                    benar-benar akan dikuatkan dalam logika
+                                    pemrograman yang mana itu sangat membantu
+                                    untuk proses belajar selanjutnya. Tidak
+                                    hanya ilmu teknologi dan perograman, tapi
+                                    kita juga diajarkan ilmu diniyyah (agama)
+                                    disini, dan uniknya disini ada kelas ruqyah
+                                    yang mana kita diajarkan konsep dasar dan
+                                    juga bagaimana proses ruqyah, tidak hanya
+                                    diajarkan cara ruqyah orang lain tapi juga
+                                    kita diajarkan cara meruqyah menggunakan
+                                    metode mandiri yang mana itu sangat membantu
+                                    dalam proses pembelajaran karena saya bisa
+                                    lebih fokus. Terima kasih."
+                                </p>
+                                <p class="font-semibold text-gray-800">
+                                    - Syarif Aditya, SMK, Sukabumi
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-section">
+                        <h2 class="text-4xl font-bold text-gray-900">
+                            Taught and Developed by Industry Practitioners
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
+                            Led by experienced industry practitioners who bring
+                            deep insights from various startups and
+                            corporations.
+                        </p>
+                    </div>
+                    <div class="max-w-4xl mx-auto gumroad-card fade-in-section">
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Our instructor has extensive experience as a
+                            freelancer for platforms like
+                            <a href="https://arifintravel.com" target="_blank"
+                                >Arifin Travel (2011)</a
+                            >
+                            and
+                            <a href="https://kautsar.co.id" target="_blank"
+                                >Pustaka al Kautsar</a
+                            >, as well as developing mobile applications (Akurat
+                            News iOS, Security Patrol with Flutter). He also
+                            held positions at startups such as Ebizu (Malaysia),
+                            StickEarn, and Juke Solusi Teknologi. This diverse
+                            background ensures a comprehensive and practical
+                            learning and service experience.
+                        </p>
+                        <h3 class="font-bold text-xl text-gray-900 mb-6">
+                            Team's Company Experience:
+                        </h3>
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-3 gap-y-8 text-center items-center text-gray-700"
+                        >
+                            <div class="flex flex-col items-center">
+                                <img
+                                    src="images/ebizu_logo.png"
+                                    alt="Ebizu Logo"
+                                    class="company-logo mb-2"
+                                />
+                                <h4 class="font-semibold">Ebizu, Sdn Bhd</h4>
+                                <p class="text-sm text-gray-500">
+                                    Senior Web Developer
+                                </p>
+                                <p class="text-sm text-gray-500">2012 - 2017</p>
+                                <p class="text-sm text-gray-500">
+                                    Loyalty Point Platform (Malaysia)
+                                </p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img
+                                    src="images/stickearn-logo.png"
+                                    alt="StickEarn Logo"
+                                    class="company-logo mb-2"
+                                />
+                                <h4 class="font-semibold">StickEarn</h4>
+                                <p class="text-sm text-gray-500">
+                                    Senior Software Tech, Team Lead
+                                </p>
+                                <p class="text-sm text-gray-500">2017 - 2019</p>
+                                <p class="text-sm text-gray-500">
+                                    Advertising Technology
+                                </p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img
+                                    src="images/juke_logo.png"
+                                    alt="Juke Solusi Teknologi Logo"
+                                    class="company-logo mb-2"
+                                />
+                                <h4 class="font-semibold">
+                                    Juke Solusi Teknologi
+                                </h4>
+                                <p class="text-sm text-gray-500">
+                                    People Development Manager
+                                </p>
+                                <p class="text-sm text-gray-500">2020 - 2023</p>
+                                <p class="text-sm text-gray-500">
+                                    IT Consulting Company
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contact" class="bg-gray-900 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Dusun Web
+                        </h3>
+                        <p class="text-gray-400 text-sm">
+                            part of Mata Rantai Academy
+                        </p>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                            Building a digital future with expertise and noble
+                            values.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">
+                            Services
+                        </h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>
+                                <a href="#services" class="hover:text-blue-400"
+                                    >Web Development</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#services" class="hover:text-blue-400"
+                                    >Server Monitoring</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#services" class="hover:text-blue-400"
+                                    >Automation Engine</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#services" class="hover:text-blue-400"
+                                    >AI Agent Automation</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">
+                            More Info
+                        </h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>
+                                <a href="#skills" class="hover:text-blue-400"
+                                    >Curriculum</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#testimonials"
+                                    class="hover:text-blue-400"
+                                    >Testimonials</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#about" class="hover:text-blue-400"
+                                    >About Us</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">
+                            Contact Us
+                        </h3>
+                        <p class="text-gray-400 text-sm">
+                            Email: founder.dusunweb@gmail.com
+                        </p>
+                        <p class="text-gray-400 text-sm">
+                            Phone: +62 8521 805 6736
+                        </p>
+                        <p class="text-gray-400 text-sm">
+                            Address: Malang, Indonesia
+                        </p>
+                        <div class="flex space-x-4 mt-4">
+                            <a
+                                href="https://github.com/elviskudo"
+                                target="_blank"
+                                class="text-gray-400 hover:text-white transition"
+                                ><i data-feather="github" class="h-6 w-6"></i
+                            ></a>
+                            <a
+                                href="#"
+                                class="text-gray-400 hover:text-white transition"
+                                ><i data-feather="linkedin" class="h-6 w-6"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm"
+                >
+                    &copy; 2017 - 2025 Dusun Web - part of Mata Rantai Academy.
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <div id="service-modal" class="modal">
+            <div class="modal-content lg:w-3/4 xl:w-2/3">
+                <button
+                    class="modal-close absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+                >
+                    <i data-feather="x" class="h-6 w-6"></i>
+                </button>
+                <h3
+                    id="modal-title"
+                    class="text-3xl font-bold text-gray-900 mb-6"
+                ></h3>
+                <div id="modal-body" class="space-y-6"></div>
+            </div>
+        </div>
+
+        <script>
+            // Initialize Feather Icons
+            feather.replace();
+
+            // Simple Fade-in Animation on Scroll
+            const sections = document.querySelectorAll(".fade-in-section");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1, // Adjust this value to control when the animation triggers
+                    rootMargin: "0px 0px -50px 0px", // Offset to trigger a bit earlier
+                },
+            );
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+
+            // Modal Logic
+            const serviceModal = document.getElementById("service-modal");
+            const modalCloseBtn = serviceModal.querySelector(".modal-close");
+            const modalTitle = document.getElementById("modal-title");
+            const modalBody = document.getElementById("modal-body");
+            const serviceTriggers =
+                document.querySelectorAll(".service-trigger");
+
+            const serviceDetails = {
+                "online-courses": {
+                    title: "Join Our Online Learning Platform: dusunweb.sch.id",
+                    image: "https://via.placeholder.com/800x450/3B82F6/FFFFFF?text=dusunweb.sch.id",
+                    caption:
+                        "Ready to become a professional developer? Our online platform offers structured courses, hands-on projects, and interactive quizzes to guide you from zero to hero.",
+                    details: `
+                      <p class="text-gray-700">Welcome to <strong>dusunweb.sch.id</strong>, our dedicated online learning campus! We've designed a comprehensive learning experience to equip you with the industry-relevant skills needed to succeed as a Moslem developer.</p>
+
+                      <h4 class="text-xl font-bold text-gray-800 mt-6 mb-3">What You Will Get:</h4>
+                      <ul class="list-disc list-inside text-gray-700 space-y-2">
+                          <li><strong>Extensive Course Catalog:</strong> Browse a wide range of courses from beginner to advanced levels.</li>
+                          <li><strong>Detailed Curriculum:</strong> See exactly what you'll learn in each module with our transparent syllabus.</li>
+                          <li><strong>Interactive Quizzes & Assignments:</strong> Test your knowledge and apply your skills with practical exercises.</li>
+                          <li><strong>Hands-On Projects:</strong> Build a real-world portfolio by completing guided projects.</li>
+                          <li><strong>Track Your Progress:</strong> Monitor your learning journey from your personal dashboard.</li>
+                          <li><strong>Certificate of Completion:</strong> Earn a certificate to showcase your new skills upon course completion.</li>
+                      </ul>
+
+                      <p class="text-sm text-gray-500 mt-2">Browse our diverse catalog of courses designed for the modern tech industry.</p>
+
+                      <a href="https://dusunweb.sch.id" target="_blank" class="block w-full text-center bg-blue-600 text-white text-lg font-bold py-4 px-6 rounded-lg hover:bg-blue-700 transition mt-8">
+                          Visit dusunweb.sch.id and Start Learning!
+                      </a>
+                  `,
+                },
+                "web-development": {
+                    title: "Web Development Solutions",
+                    image: "https://via.placeholder.com/800x450/3B82F6/FFFFFF?text=Web+Development",
+                    caption:
+                        "From captivating landing pages to intricate web applications, we craft digital experiences that drive engagement and growth. Our expertise spans modern frameworks and robust backend systems.",
+                    details: `
+                    <p class="text-gray-700">We specialize in creating responsive, high-performance websites tailored to your business needs. Our services include:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Custom Website Design & Development</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Content Management Systems (CMS)</li>
+                        <li>API Development & Integration</li>
+                        <li>Progressive Web Apps (PWAs)</li>
+                        <li>Maintenance & Support</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-2">Example of our custom web design work.</p>
+                `,
+                },
+                "server-monitoring": {
+                    title: "Robust Server Monitoring",
+                    image: "https://via.placeholder.com/800x450/10B981/FFFFFF?text=Server+Monitoring",
+                    caption:
+                        "Ensure your applications are always online and performing optimally with our 24/7 proactive server monitoring and management services.",
+                    details: `
+                    <p class="text-gray-700">Our comprehensive server monitoring ensures high availability and performance for your digital infrastructure:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>24/7 Uptime & Performance Monitoring</li>
+                        <li>Resource Utilization Tracking (CPU, RAM, Disk)</li>
+                        <li>Security Patch Management</li>
+                        <li>Bug fixing</li>
+                        <li>Automated Alerting & Incident Response</li>
+                        <li>Cloud (AWS, GCP) & VPS Support</li>
+                        <li>Performance Optimization & Tuning</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-2">Real-time uptime dashboard for your servers.</p>
+                `,
+                },
+                "ebook-creator": {
+                    title: "Professional Ebook Creation",
+                    image: "https://via.placeholder.com/800x450/FBBF24/FFFFFF?text=Ebook+Creator",
+                    caption:
+                        "Transform your content into beautifully designed, professional ebooks. We handle formatting, layout, and conversion to ePub and PDF.",
+                    details: `
+                    <p class="text-gray-700">Bring your stories, guides, or educational content to life with our expert ebook creation services:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Content Formatting & Layout Design</li>
+                        <li>PDF Conversion</li>
+                        <li>Interactive Elements Integration</li>
+                        <li>Cover Design Assistance</li>
+                        <li>Quality Assurance & Proofreading</li>
+                        <li>Distribution-ready Files</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-2">Sample of our ebook.</p>
+
+                    <a href="https://lynk.id/sultan-rebahan" target="_blank" class="block w-full text-center bg-blue-600 text-white text-lg font-bold py-4 px-6 rounded-lg hover:bg-blue-700 transition mt-8">
+                        Visit Our Book and Start Learning!
+                    </a>
+                `,
+                },
+                "automation-engine": {
+                    title: "Powerful Automation Engine",
+                    image: "https://via.placeholder.com/800x450/EF4444/FFFFFF?text=Automation+Engine",
+                    caption:
+                        "Streamline your operations and boost efficiency by automating repetitive tasks across content, marketing, and reporting.",
+                    details: `
+                    <p class="text-gray-700">Our automation engine solutions help businesses reduce manual effort and focus on core activities:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Content Automation (e.g., scheduled publishing, data scraping)</li>
+                        <li>Marketing Automation (e.g., email campaigns, social media posting)</li>
+                        <li>Report Automation & Data Integration</li>
+                        <li>Workflow Optimization</li>
+                        <li>Custom Scripting & Integration</li>
+                        <li>Performance Analytics for Automated Tasks</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-2">Visual representation of an automated workflow.</p>
+                `,
+                },
+                "ai-agent": {
+                    title: "Intelligent AI Agent Automation",
+                    image: "https://via.placeholder.com/800x450/8B5CF6/FFFFFF?text=AI+Agent+Automation",
+                    caption:
+                        "Deploy custom AI agents to intelligently handle customer inquiries, analyze complex data, and manage internal tasks, elevating your operational intelligence.",
+                    details: `
+                    <p class="text-gray-700">Harness the power of AI to enhance your business capabilities:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Custom AI Chatbots for Customer Support</li>
+                        <li>Data Analysis & Insight Generation</li>
+                        <li>Intelligent Task Management</li>
+                        <li>Personalized Recommendation Systems</li>
+                        <li>Natural Language Processing (NLP) Solutions</li>
+                        <li>Integration with Existing Platforms</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-2">An example of a custom AI assistant in action.</p>
+                `,
+                },
+            };
+
+            serviceTriggers.forEach((trigger) => {
+                trigger.addEventListener("click", () => {
+                    const serviceId = trigger.dataset.serviceId;
+                    const data = serviceDetails[serviceId];
+
+                    if (data) {
+                        modalTitle.textContent = data.title;
+                        modalBody.innerHTML = `
+                        <img src="${data.image}" alt="${data.title}" class="w-full h-auto rounded-md mb-4">
+                        <p class="text-lg text-gray-800 leading-relaxed mb-6">${data.caption}</p>
+                        ${data.details}
+                    `;
+                        serviceModal.classList.add("open");
+                        document.body.style.overflow = "hidden"; // Prevent scrolling
+                    }
+                });
+            });
+
+            modalCloseBtn.addEventListener("click", () => {
+                serviceModal.classList.remove("open");
+                document.body.style.overflow = ""; // Restore scrolling
+            });
+
+            // Close modal when clicking outside
+            serviceModal.addEventListener("click", (e) => {
+                if (e.target === serviceModal) {
+                    serviceModal.classList.remove("open");
+                    document.body.style.overflow = "";
+                }
+            });
+
+            // Keyboard ESC to close modal
+            document.addEventListener("keydown", (e) => {
+                if (
+                    e.key === "Escape" &&
+                    serviceModal.classList.contains("open")
+                ) {
+                    serviceModal.classList.remove("open");
+                    document.body.style.overflow = "";
+                }
+            });
+        </script>
+    </body>
+</html>

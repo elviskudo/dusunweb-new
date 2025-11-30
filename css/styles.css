@@ -1,0 +1,192 @@
+/* Custom Styles & Font Definitions */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f8f8;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* Very light gray, similar to Gumroad */
+    color: #333;
+}
+
+/* Animations for Ornaments */
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+.font-amiri {
+    font-family: "Amiri", serif;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+.arab-text {
+    direction: rtl;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Simple Fade-in Animation on Scroll */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gumroad-like card styles */
+.gumroad-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        0 10px 15px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    /* Indicate clickable */
+}
+
+.gumroad-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal specific styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.open .modal-content {
+    transform: scale(1);
+}
+
+/* Carousel Styles for Testimonials */
+.carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* For smoother scrolling on iOS */
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    /* Default to full width on small screens */
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+
+    /* md breakpoint */
+    .carousel-item {
+        flex: 0 0 calc(100% / 2);
+        /* 2 items on medium screens */
+        width: calc(100% / 2);
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* lg breakpoint */
+    .carousel-item {
+        flex: 0 0 calc(100% / 3);
+        /* 3 items on large screens */
+        width: calc(100% / 3);
+    }
+}
+
+/* Hide scrollbar for aesthetic purposes */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Company logos */
+.company-logo {
+    height: 40px;
+    /* Adjust as needed */
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.company-logo:hover {
+    filter: grayscale(0%);
+}

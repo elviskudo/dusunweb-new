@@ -1,0 +1,38 @@
+{
+    "online-courses": {
+        "title": "Join Our Online Learning Platform: dusunweb.sch.id",
+        "image": "https://via.placeholder.com/800x450/3B82F6/FFFFFF?text=dusunweb.sch.id",
+        "caption": "Ready to become a professional developer? Our online platform offers structured courses, hands-on projects, and interactive quizzes to guide you from zero to hero.",
+        "details": "<p class=\"text-gray-700\">Welcome to <strong>dusunweb.sch.id</strong>, our dedicated online learning campus! We've designed a comprehensive learning experience to equip you with the industry-relevant skills needed to succeed as a Moslem developer.</p>\n\n<h4 class=\"text-xl font-bold text-gray-800 mt-6 mb-3\">What You Will Get:</h4>\n<ul class=\"list-disc list-inside text-gray-700 space-y-2\">\n    <li><strong>Extensive Course Catalog:</strong> Browse a wide range of courses from beginner to advanced levels.</li>\n    <li><strong>Detailed Curriculum:</strong> See exactly what you'll learn in each module with our transparent syllabus.</li>\n    <li><strong>Interactive Quizzes & Assignments:</strong> Test your knowledge and apply your skills with practical exercises.</li>\n    <li><strong>Hands-On Projects:</strong> Build a real-world portfolio by completing guided projects.</li>\n    <li><strong>Track Your Progress:</strong> Monitor your learning journey from your personal dashboard.</li>\n    <li><strong>Certificate of Completion:</strong> Earn a certificate to showcase your new skills upon course completion.</li>\n</ul>\n\n<p class=\"text-sm text-gray-500 mt-2\">Browse our diverse catalog of courses designed for the modern tech industry.</p>\n\n<a href=\"https://dusunweb.sch.id\" target=\"_blank\" class=\"block w-full text-center bg-blue-600 text-white text-lg font-bold py-4 px-6 rounded-lg hover:bg-blue-700 transition mt-8\">\n    Visit dusunweb.sch.id and Start Learning!\n</a>"
+    },
+    "web-development": {
+        "title": "Web Development Solutions",
+        "image": "https://via.placeholder.com/800x450/3B82F6/FFFFFF?text=Web+Development",
+        "caption": "From captivating landing pages to intricate web applications, we craft digital experiences that drive engagement and growth. Our expertise spans modern frameworks and robust backend systems.",
+        "details": "<p class=\"text-gray-700\">We specialize in creating responsive, high-performance websites tailored to your business needs. Our services include:</p>\n<ul class=\"list-disc list-inside text-gray-700 space-y-2\">\n    <li>Custom Website Design & Development</li>\n    <li>E-commerce Solutions</li>\n    <li>Content Management Systems (CMS)</li>\n    <li>API Development & Integration</li>\n    <li>Progressive Web Apps (PWAs)</li>\n    <li>Maintenance & Support</li>\n</ul>\n<p class=\"text-sm text-gray-500 mt-2\">Example of our custom web design work.</p>"
+    },
+    "server-monitoring": {
+        "title": "Robust Server Monitoring",
+        "image": "https://via.placeholder.com/800x450/10B981/FFFFFF?text=Server+Monitoring",
+        "caption": "Ensure your applications are always online and performing optimally with our 24/7 proactive server monitoring and management services.",
+        "details": "<p class=\"text-gray-700\">Our comprehensive server monitoring ensures high availability and performance for your digital infrastructure:</p>\n<ul class=\"list-disc list-inside text-gray-700 space-y-2\">\n    <li>24/7 Uptime & Performance Monitoring</li>\n    <li>Resource Utilization Tracking (CPU, RAM, Disk)</li>\n    <li>Security Patch Management</li>\n    <li>Bug fixing</li>\n    <li>Automated Alerting & Incident Response</li>\n    <li>Cloud (AWS, GCP) & VPS Support</li>\n    <li>Performance Optimization & Tuning</li>\n</ul>\n<p class=\"text-sm text-gray-500 mt-2\">Real-time uptime dashboard for your servers.</p>"
+    },
+    "ebook-creator": {
+        "title": "Professional Ebook Creation",
+        "image": "https://via.placeholder.com/800x450/FBBF24/FFFFFF?text=Ebook+Creator",
+        "caption": "Transform your content into beautifully designed, professional ebooks. We handle formatting, layout, and conversion to ePub and PDF.",
+        "details": "<p class=\"text-gray-700\">Bring your stories, guides, or educational content to life with our expert ebook creation services:</p>\n<ul class=\"list-disc list-inside text-gray-700 space-y-2\">\n    <li>Content Formatting & Layout Design</li>\n    <li>PDF Conversion</li>\n    <li>Interactive Elements Integration</li>\n    <li>Cover Design Assistance</li>\n    <li>Quality Assurance & Proofreading</li>\n    <li>Distribution-ready Files</li>\n</ul>\n<p class=\"text-sm text-gray-500 mt-2\">Sample of our ebook.</p>\n\n<a href=\"https://lynk.id/sultan-rebahan\" target=\"_blank\" class=\"block w-full text-center bg-blue-600 text-white text-lg font-bold py-4 px-6 rounded-lg hover:bg-blue-700 transition mt-8\">\n    Visit Our Book and Start Learning!\n</a>"
+    },
+    "automation-engine": {
+        "title": "Powerful Automation Engine",
+        "image": "https://via.placeholder.com/800x450/EF4444/FFFFFF?text=Automation+Engine",
+        "caption": "Streamline your operations and boost efficiency by automating repetitive tasks across content, marketing, and reporting.",
+        "details": "<p class=\"text-gray-700\">Our automation engine solutions help businesses reduce manual effort and focus on core activities:</p>\n<ul class=\"list-disc list-inside text-gray-700 space-y-2\">\n    <li>Content Automation (e.g., scheduled publishing, data scraping)</li>\n    <li>Marketing Automation (e.g., email campaigns, social media posting)</li>\n    <li>Report Automation & Data Integration</li>\n    <li>Workflow Optimization</li>\n    <li>Custom Scripting & Integration</li>\n    <li>Performance Analytics for Automated Tasks</li>\n</ul>\n<p class=\"text-sm text-gray-500 mt-2\">Visual representation of an automated workflow.</p>"
+    },
+    "ai-agent": {
+        "title": "Intelligent AI Agent Automation",
+        "image": "https://via.placeholder.com/800x450/8B5CF6/FFFFFF?text=AI+Agent+Automation",
+        "caption": "Deploy custom AI agents to intelligently handle customer inquiries, analyze complex data, and manage internal tasks, elevating your operational intelligence.",
+        "details": "<p class=\"text-gray-700\">Harness the power of AI to enhance your business capabilities:</p>\n<ul class=\"list-disc list-inside text-gray-700 space-y-2\">\n    <li>Custom AI Chatbots for Customer Support</li>\n    <li>Data Analysis & Insight Generation</li>\n    <li>Intelligent Task Management</li>\n    <li>Personalized Recommendation Systems</li>\n    <li>Natural Language Processing (NLP) Solutions</li>\n    <li>Integration with Existing Platforms</li>\n</ul>\n<p class=\"text-sm text-gray-500 mt-2\">An example of a custom AI assistant in action.</p>"
+    }
+}

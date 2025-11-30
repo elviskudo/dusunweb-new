@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dusun Web - Be a Muslim Developer. From Zero to Hero.</title>
+    <meta name="description"
+        content="Dusun Web, part of Mata Rantai Academy, guides Muslim developers and provides reliable digital solutions for businesses." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="shortcut icon" href="images/mata-rantai-logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        @import "css/styles.css";
+    </style>
+</head>
+
+<body class="bg-[#f8f8f8] text-[#333]">
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/dusunweb_logo.jpg" alt="Dusun Web" class="h-10 w-10" />
+                <img src="images/mata-rantai-logo.png" alt="Mata Rantai" class="h-10" />
+                <div>
+                    <span class="text-xl font-bold text-gray-800">Dusun Web</span>
+                    <span class="block text-xs font-light text-blue-600">part of Mata Rantai Academy</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#testimonials" class="hover:text-blue-600 transition">Testimonials</a>
+                <a href="#about" class="hover:text-blue-600 transition">About Us</a>
+            </nav>
+            <a href="#contact"
+                class="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition font-medium">
+                Consultation
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <i data-feather="menu" class="h-8 w-8"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-md border-t border-gray-100 py-4 px-6 flex flex-col space-y-4 z-40">
+            <a href="#services"
+                class="text-gray-700 font-medium hover:text-blue-600 transition mobile-link">Services</a>
+            <a href="#skills" class="text-gray-700 font-medium hover:text-blue-600 transition mobile-link">Skills</a>
+            <a href="#testimonials"
+                class="text-gray-700 font-medium hover:text-blue-600 transition mobile-link">Testimonials</a>
+            <a href="#about" class="text-gray-700 font-medium hover:text-blue-600 transition mobile-link">About Us</a>
+            <a href="#contact"
+                class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition font-medium text-center mobile-link">Consultation</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <section
+            class="py-20 md:py-32 bg-[#f8f8f8] relative overflow-hidden bg-[url('images/dusunweb-headline.png')] bg-cover">
+            <!-- Hero Ornaments -->
+            <div
+                class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+            </div>
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-32 left-20 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000">
+            </div>
+
+            <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 text-stroke leading-tight">
+                    Be a Muslim Developer. From Zero to Hero.
+                </h1>
+                <p
+                    class="mt-6 max-w-3xl mx-auto text-xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] leading-relaxed">
+                    We guide young generations to become skilled app
+                    developers and provide reliable digital solutions for
+                    businesses.
+                </p>
+                <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#skills"
+                        class="bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition shadow-lg text-lg">
+                        Start Learning Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="fade-in-section gumroad-card flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                            Digital Solutions for Your Business
+                        </h2>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            Whether you need a professional website,
+                            reliable server monitoring, or want to automate
+                            your business processes, Dusun Web is your
+                            technology partner. We build from the ground up
+                            with deep expertise and a personal touch.
+                        </p>
+                    </div>
+                    <a href="#services"
+                        class="inline-flex items-center text-blue-600 hover:underline font-semibold mt-4">
+                        View All Services
+                        <i data-feather="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+
+                <div class="fade-in-section gumroad-card flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                            Shaping a Generation of Pious Developers
+                        </h2>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            More than just coding, we are committed to
+                            guiding young generations, from junior high to
+                            university, who are accustomed to gadgets, to
+                            become skilled and character-driven Muslim app
+                            developers. Our goal is to cultivate expertise
+                            while fostering an understanding of life's true
+                            purpose.
+                        </p>
+                    </div>
+                    <a href="#philosophy"
+                        class="inline-flex items-center text-blue-600 hover:underline font-semibold mt-4">
+                        Learn Our Philosophy
+                        <i data-feather="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 relative overflow-hidden">
+            <!-- Services Ornaments -->
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-50 to-purple-50 rounded-full opacity-50 blur-3xl -z-10">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Our Professional Services
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                        We offer a variety of technology solutions relevant
+                        to current industry needs.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="gumroad-card fade-in-section service-trigger" data-service-id="online-courses">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-feather="monitor" class="h-8 w-8 text-blue-600"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">
+                                Our Courses
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Join our academy at
+                            <strong>dusunweb.sch.id</strong> (under development) to start your
+                            journey as a professional developer today.
+                        </p>
+                    </div>
+                    <div class="gumroad-card fade-in-section service-trigger" data-service-id="web-development">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-feather="code" class="h-8 w-8 text-blue-600"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">
+                                Web Development
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Building custom websites and web applications
+                            from simple landing pages to complex enterprise
+                            systems (microservices architecture).
+                        </p>
+                    </div>
+                    <div class="gumroad-card fade-in-section service-trigger" data-service-id="server-monitoring"
+                        style="transition-delay: 100ms">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-feather="server" class="h-8 w-8 text-blue-600"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">
+                                Server Monitoring
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            24/7 monitoring services for your VPS and Cloud
+                            (GCP, AWS) ensuring maximum performance and
+                            uptime.
+                        </p>
+                    </div>
+                    <div class="gumroad-card fade-in-section service-trigger" data-service-id="ebook-creator"
+                        style="transition-delay: 200ms">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-feather="book-open" class="h-8 w-8 text-blue-600"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">
+                                Ebook Creator
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Convert your manuscripts into professional
+                            ebooks in PDF formats, ready for publishing and
+                            distribution.
+                        </p>
+                        <p class="text-gray-700 mt-4 leading-relaxed">
+                            <a target="_blank" class="hover:text-blue-400"
+                                href="https://lynk.id/sultan-rebahan">lynk.id/sultan-rebahan</a>
+                        </p>
+                    </div>
+                    <div class="gumroad-card fade-in-section service-trigger" data-service-id="automation-engine"
+                        style="transition-delay: 300ms">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-feather="settings" class="h-8 w-8 text-blue-600"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">
+                                Automation Engine
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Automating various business processes such as
+                            content automation, marketing campaigns, and
+                            periodic reports.
+                        </p>
+                    </div>
+                    <div class="gumroad-card fade-in-section service-trigger" data-service-id="ai-agent"
+                        style="transition-delay: 400ms">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-feather="cpu" class="h-8 w-8 text-blue-600"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">
+                                AI Agent Automation
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Development of custom AI assistants to answer
+                            customer queries, analyze data, or optimize
+                            internal workflows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <div class="fade-in-section">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                        Our Philosophy & Vision
+                    </h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                        Our vision is to guide young generations, "addicted"
+                        to gadgets, to become "armed" as skilled app
+                        developers, with a strong foundation of faith. We
+                        strive to eradicate digital "poison" by providing
+                        direction and purpose in life through technological
+                        expertise.
+                    </p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mb-6">
+                        <p class="font-amiri arab-text text-gray-800">
+                            وَمَا خَلَقْتُ الْجِنَّ وَالْإِنْسَ إِلَّا
+                            لِيَعْبُدُونِ
+                        </p>
+                        <p class="italic text-gray-600">
+                            "And I did not create the jinn and mankind
+                            except to worship Me." (Qur'an, Adz Dzariyat:
+                            56)
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                        <p class="font-amiri arab-text text-gray-800">
+                            «يَسِّرُوا وَلاَ تُعَسِّرُوا، وَبَشِّرُوا وَلاَ
+                            تُنَفِّرُوا»
+                        </p>
+                        <p class="italic text-gray-600">
+                            "Make things easy, do not make them difficult,
+                            give good tidings, do not make them flee."
+                            (Hadith, Bukhari & Muslim)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 relative overflow-hidden">
+            <!-- Skills Ornaments -->
+            <div
+                class="absolute top-10 right-10 w-40 h-40 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-10 left-10 w-40 h-40 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Our Skills & Curriculum
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                        Our curriculum aligns with current industry needs,
+                        supported by experienced mentorship.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Logic & Scratch
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Business Analysis
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        UI UX Design (Figma)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        HTML5, CSS3, jQuery
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Bootstrap & Tailwind
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Apache & Nginx
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Databases (SQL, NoSQL)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Backend (Laravel, Express.js)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Frontend (Nuxt.js, Next.js)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Mobile Dev (Flutter, React Native)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Containerization (Docker)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Version Control (Git)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Cloud & Hosting
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Architecture (Microservices)
+                    </div>
+                    <div class="gumroad-card fade-in-section p-4 text-base font-medium">
+                        Project Mgmt (Scrum)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        What Our Clients Say
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                        Success stories from our students and clients who
+                        have benefited from Dusun Web.
+                    </p>
+                </div>
+                <div class="relative">
+                    <!-- Ornament -->
+                    <div class="absolute -top-10 -left-10 w-20 h-20 bg-blue-100 rounded-full opacity-50 blur-xl"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-xl">
+                    </div>
+
+                    <div id="testimonials-container" class="flex carousel-container space-x-8 pb-4">
+                        <!-- Testimonials will be loaded here via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Taught and Developed by Industry Practitioners
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
+                        Led by experienced industry practitioners who bring
+                        deep insights from various startups and
+                        corporations.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto gumroad-card fade-in-section">
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Our instructor has extensive experience as a
+                        freelancer for platforms like
+                        <a href="https://arifintravel.com" target="_blank">Arifin Travel (2011)</a>
+                        and
+                        <a href="https://kautsar.co.id" target="_blank">Pustaka al Kautsar</a>, as well as developing
+                        mobile applications (Akurat
+                        News iOS, Security Patrol with Flutter). He also
+                        held positions at startups such as Ebizu (Malaysia),
+                        StickEarn, and Juke Solusi Teknologi. This diverse
+                        background ensures a comprehensive and practical
+                        learning and service experience.
+                    </p>
+                    <h3 class="font-bold text-xl text-gray-900 mb-6">
+                        Team's Company Experience:
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-8 text-center items-center text-gray-700">
+                        <div class="flex flex-col items-center">
+                            <img src="images/ebizu_logo.png" alt="Ebizu Logo" class="company-logo mb-2" />
+                            <h4 class="font-semibold">Ebizu, Sdn Bhd</h4>
+                            <p class="text-sm text-gray-500">
+                                Senior Web Developer
+                            </p>
+                            <p class="text-sm text-gray-500">2012 - 2017</p>
+                            <p class="text-sm text-gray-500">
+                                Loyalty Point Platform (Malaysia)
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="images/stickearn-logo.png" alt="StickEarn Logo" class="company-logo mb-2" />
+                            <h4 class="font-semibold">StickEarn</h4>
+                            <p class="text-sm text-gray-500">
+                                Senior Software Tech, Team Lead
+                            </p>
+                            <p class="text-sm text-gray-500">2017 - 2019</p>
+                            <p class="text-sm text-gray-500">
+                                Advertising Technology
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="images/juke_logo.png" alt="Juke Solusi Teknologi Logo"
+                                class="company-logo mb-2" />
+                            <h4 class="font-semibold">
+                                Juke Solusi Teknologi
+                            </h4>
+                            <p class="text-sm text-gray-500">
+                                People Development Manager
+                            </p>
+                            <p class="text-sm text-gray-500">2020 - 2023</p>
+                            <p class="text-sm text-gray-500">
+                                IT Consulting Company
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Dusun Web
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        part of Mata Rantai Academy
+                    </p>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        Building a digital future with expertise and noble
+                        values.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        Services
+                    </h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>
+                            <a href="#services" class="hover:text-blue-400">Web Development</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="hover:text-blue-400">Server Monitoring</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="hover:text-blue-400">Automation Engine</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="hover:text-blue-400">AI Agent Automation</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        More Info
+                    </h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>
+                            <a href="#skills" class="hover:text-blue-400">Curriculum</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="hover:text-blue-400">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="hover:text-blue-400">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        Contact Us
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        Email: founder.dusunweb@gmail.com
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Phone: +62 8521 805 6736
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Address: Malang, Indonesia
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://github.com/elviskudo" target="_blank"
+                            class="text-gray-400 hover:text-white transition"><i data-feather="github"
+                                class="h-6 w-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"
+                                class="h-6 w-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2017 - 2025 Dusun Web - part of Mata Rantai Academy.
+                All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div id="service-modal" class="modal">
+        <div class="modal-content lg:w-3/4 xl:w-2/3">
+            <button class="modal-close absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+                <i data-feather="x" class="h-6 w-6"></i>
+            </button>
+            <h3 id="modal-title" class="text-3xl font-bold text-gray-900 mb-6"></h3>
+            <div id="modal-body" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/mobile-menu.js"></script>
+</body>
+
+</html>
